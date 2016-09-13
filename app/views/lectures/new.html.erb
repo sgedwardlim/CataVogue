@@ -1,3 +1,17 @@
 <h1> Adding a new Lecture </h1>
 
-<%= render 'lectures/form' %>
+<%= form_for :lecture do |f| %>
+  <p>
+    <%= f.label :lecture %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :professor %><br>
+    <%= f.text_area :professor %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
