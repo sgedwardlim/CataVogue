@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'homepage/Index'
+  root 'homepage#index'
 
-  root 'homepage#Index'
+  get 'homepage/index'
+
+  get 'lectures/new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
