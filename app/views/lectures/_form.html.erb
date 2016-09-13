@@ -1,0 +1,15 @@
+<%= form_for :lecture, url: lectures_path do |f| %>
+  <p>
+    <%= f.label "Lecture Name" %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label "Professor Name" %><br>
+    <%= f.text_area :professor %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
