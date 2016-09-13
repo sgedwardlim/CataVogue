@@ -19,6 +19,10 @@ class LecturesController < ApplicationController
 	def save
 	end
 
+	def form
+		@lectures = Lecture.all
+	end
+
 	private
 
 	def lecture_params
