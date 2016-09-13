@@ -1,1 +1,16 @@
 <h1> This is the index page for Lectures</h1>
+
+<table>
+  <tr>
+    <th>Lecture Name</th>
+    <th>Professor Name</th>
+  </tr>
+ 
+  <% @lectures.each do |lecture| %>
+    <tr>
+      <td><%= lecture.name %></td>
+      <td><%= lecture.professor %></td>
+      <td><%= link_to 'Show', lecture_path(lecture) %></td>
+    </tr>
+  <% end %>
+</table>

@@ -6,10 +6,11 @@ class LecturesController < ApplicationController
 		@lecture = Lecture.new(lecture_params)
 
 		@lecture.save
-		redirect_to @leture
+		redirect_to @lecture
 	end
 
 	def index
+		@lectures = Lecture.all
 	end
 
 	def show
@@ -17,10 +18,6 @@ class LecturesController < ApplicationController
 	end
 
 	def save
-	end
-
-	def form
-		@lectures = Lecture.all
 	end
 
 	private
