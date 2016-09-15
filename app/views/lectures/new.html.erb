@@ -1,6 +1,6 @@
 <h1> Adding a new Lecture </h1>
 
-<%= form_for :lecture do |f| %>
+<%= form_for :lecture, url: lectures_path do |f| %>
   <p>
     <%= f.label :lecture %><br>
     <%= f.text_field :name %>
