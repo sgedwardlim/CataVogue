@@ -1,0 +1,16 @@
+<h1> Adding a new comment </h1>
+
+<table>
+  <tr>
+    <th>Reviewer</th>
+    <th>Review</th>
+  </tr>
+ 
+  <% @comments.each do |comment| %>
+    <tr>
+      <td><%= comment.reviewer %></td>
+      <td><%= comment.review %></td>
+      <td><%= link_to 'Submit', comment_path(comment) %></td>
+    </tr>
+  <% end %>
+</table>

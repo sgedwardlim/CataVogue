@@ -7,6 +7,7 @@ class LecturesController < ApplicationController
 
 		@lecture.save
 		redirect_to @lecture
+
 	end
 
 	def index
