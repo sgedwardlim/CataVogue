@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
 	end
 
 	def create
+		@lecture = Lecture.find(params[:lecture_id])
 		@reviews = @lecture.comments.create(comment_params)
-		@lecture = Lectures.find(params[:lecture_id])
-
+		
 		@reviews.save
 		redirect_to lecture_path(@lecture)
 	end
@@ -24,6 +24,6 @@ class CommentsController < ApplicationController
 	private
 
 	def comment_params
-		params.require(:comment).permit(:reviwer, :review)
+		params.require(:comment).permit(:reviewer, :review)
 	end
 end

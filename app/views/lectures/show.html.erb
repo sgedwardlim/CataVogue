@@ -7,8 +7,20 @@
   <strong>Professor Name:</strong>
   <%= @lecture.professor %>
 </p>
-
-
+<!-- Show all the comments associated with the Lecture -->
+<h2>Comments</h2>
+<% @lecture.comments.each do |comment| %>
+  <p>
+    <strong>Reviewer:</strong>
+    <%= comment.reviewer %>
+  </p>
+ 
+  <p>
+    <strong>Comment:</strong>
+    <%= comment.review %>
+  </p>
+<% end %>
+<!-- Allow users signed in to add a comment -->
 <h2>Add a comment:</h2>
 <%= form_for([@lecture, @lecture.comments.build]) do |f| %>
   <p>
