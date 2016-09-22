@@ -1,0 +1,17 @@
+<h1> Showing Lecture </h1>
+
+<%= form_for :lecture, url: lecture_path(@lecture), method: :patch do |f| %>
+  <p>
+    <%= f.label :lecture %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :professor %><br>
+    <%= f.text_area :professor %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
