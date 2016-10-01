@@ -5,5 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :comments
+  has_many :lectures
+
   validates_format_of :email, with: /\@sjsu\.com/, message: 'address should be from SJSU.com'
 end

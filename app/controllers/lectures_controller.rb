@@ -1,9 +1,10 @@
 class LecturesController < ApplicationController
 	def new
+		@lecture = current_user.lectures.build
 	end
 
 	def create
-		@lecture = Lecture.new(lecture_params)
+		@lecture = current_user.lectures.build(lecture_params)
 
 		@lecture.save
 		redirect_to @lecture
