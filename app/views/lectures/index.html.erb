@@ -1,9 +1,10 @@
 <h1> This is the index page for Lectures</h1>
 
-<table>
+<table class="table">
   <tr>
     <th>Lecture Name</th>
     <th>Professor Name</th>
+    <th>Options</th>
   </tr>
  
   <% @lectures.each do |lecture| %>
@@ -11,6 +12,10 @@
       <td><%= lecture.name %></td>
       <td><%= lecture.professor %></td>
       <td><%= link_to 'Show', lecture_path(lecture) %></td>
+      <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
+      <td><%= link_to 'Destroy', lecture_path(lecture),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>
