@@ -16,7 +16,7 @@
       <td><%= link_to 'Show', lecture_path(lecture) %></td>
 
       <!-- only show edit and delete methods if lecuture belongs to user who created it -->
-      <% if current_user.id == lecture.user_id %>
+      <% if user_signed_in? && (current_user.id == lecture.user_id) %>
         <td><%= link_to 'Edit', edit_lecture_path(lecture) %></td>
         <td><%= link_to 'Destroy', lecture_path(lecture),
                 method: :delete,
