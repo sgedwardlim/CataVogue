@@ -1,5 +1,5 @@
 class LecturesController < ApplicationController
-	before_action :authenticate_user!, :only => [:edit, :new]
+	before_action :authenticate_user!, :only => [:edit, :new, :create]
 	def new
 		@lecture = current_user.lectures.build
 	end
