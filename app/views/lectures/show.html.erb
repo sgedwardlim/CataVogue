@@ -1,24 +1,33 @@
 <p>
-  <strong>Lecture Name:</strong>
-  <%= @lecture.name %>
+
+  <strong><h2><%= @lecture.name %></h2></strong>
 </p>
  
 <p>
-  <strong>Professor Name:</strong>
-  <%= @lecture.professor %>
-</p>
+  <strong><h3><%= @lecture.professor %></h3></strong>
+</p><br>
+
+<ul class="nav nav-tabs">
+  <li role="presentation" class="active"><a href="#">Green Sheet</a></li>
+  <li role="presentation"><a href="#">Notes</a></li>
+</ul>
+
+<div class="well">...</div>
+
 <!-- Show all the comments associated with the Lecture -->
-<h2>Comments</h2>
+<h4>Most Recent Comments</h4>
 <% @lecture.comments.each do |comment| %>
-  <p>
-    <strong>Reviewer:</strong>
-    <%= comment.reviewer %>
-  </p>
- 
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.review %>
-  </p>
+  <div class="well well-sm">
+    <p>
+      <strong>Reviewer:</strong>
+      <%= comment.reviewer %>
+    </p>
+   
+    <p>
+      <strong>Comment:</strong>
+      <%= comment.review %>
+    </p>
+  </div>
 <% end %>
 <!-- Allow users signed in to add a comment -->
 <h2>Add a comment:</h2>
