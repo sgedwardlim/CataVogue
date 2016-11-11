@@ -9,7 +9,6 @@ class LecturesController < ApplicationController
 
 		@lecture.save
 		redirect_to @lecture
-
 	end
 
 	def index
@@ -47,7 +46,7 @@ class LecturesController < ApplicationController
 	private
 
 	def lecture_params
-		params.require(:lecture).permit(:name, :professor)
+		params.require(:lecture).permit(:course_id, :course_name, :professor)
 	end
 
 end
