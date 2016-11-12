@@ -5,7 +5,7 @@ namespace :import do
 	desc "Import lecture data from csv"
 	task lectures: :environment do
 		# Get the full path to where the csv file exist
-		filename = File.join Rails.root, "sjsucourses.csv"
+		filename = File.join Rails.root, "sjsuclassdata.csv"
 		# counter for num of items added to database
 		counter = 0
 		# Use built in csv methods provided by rails to parse data from csv file
