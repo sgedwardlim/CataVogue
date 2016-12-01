@@ -1,6 +1,7 @@
 <h1> This is the index page for Lectures</h1>
 
-<table class="table">
+<div class="container">
+  <table class="table">
   <tr>
     <th>Course Id</th>
     <th>Course Name</th>
@@ -17,3 +18,8 @@
     </tr>
   <% end %>
 </table>
+
+<div class="text-center">
+   <%= will_paginate @lectures, renderer: BootstrapPagination::Rails %>
+</div>
+</div>

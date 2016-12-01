@@ -12,7 +12,7 @@ class LecturesController < ApplicationController
 	end
 
 	def index
-		@lectures = Lecture.all
+		@lectures = Lecture.all.paginate(:page => params[:page], :per_page => 50)
 	end
 
 	def edit
