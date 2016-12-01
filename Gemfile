@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 # Devise is for user authethucation and helper methods
 gem 'devise'
@@ -28,8 +28,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'json', '~> 1.8.3'
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin]
+gem 'tzinfo-data', platforms: [:x64_mingw, :mingw, :mswin]
+#gem 'tzinfo-data', platforms: [:mingw, :mswin]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
