@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+  resources :attachments
+
+  get 'links/new'
+
+  get 'links/create'
+
+  get 'links/destroy'
+
+  get 'links/update'
+
   devise_for :users
   root 'homepage#index'
 
@@ -6,7 +16,8 @@ Rails.application.routes.draw do
 
   resources :lectures do
     resources :comments
-end
+    resources :attachments
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
