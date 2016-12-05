@@ -9,7 +9,12 @@ class LecturesController < ApplicationController
 	end
 
 	def index
-		@lectures = Lecture.all.paginate(:page => params[:page], :per_page => 50)
+		@lectures = Lecture.all
+		if params[:search]
+		    @lectures = Lecture.search(params[:search]).order("created_at DESC").paginate(:page => params[:page], :per_page => 50)
+		else
+			@lectures = Lecture.all.paginate(:page => params[:page], :per_page => 50)
+		end
 	end
 
 	def edit
