@@ -28,6 +28,7 @@ class LecturesController < ApplicationController
 
 	def show
 		@lecture = Lecture.find(params[:id])
+		@attachments = Attachment.all.paginate(:page => params[:page], :per_page => 6)
 	end
 
 	def save
