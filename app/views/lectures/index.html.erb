@@ -1,25 +1,29 @@
-<h1> This is the index page for Lectures</h1>
+<div style="margin-top: 50px;" class="container">
+  <div class="box">
 
-<div class="container">
-  <table class="table">
-  <tr>
-    <th>Course Id</th>
-    <th>Course Name</th>
-    <th>Professor Name</th>
-    <th></th>
-  </tr>
+    <table style="margin:0 auto; width:95%; font-family: Georgia; padding-left: 20px; font-size: 20px;">
+      <h1 style="margin:0 auto; width:95%; font-family: Georgia; text-align: center; padding-top: 15px; padding-bottom: 15px; font-size: 40px;">ALL LECTURES</h1>
+      <tr>
+        <th><u>Course ID</u></th>
+        <th><u>Course Name</u></th>
+        <th><u>Professor Name</u></th>
+        <th></th>
+        </tr>
 
-  <% @lectures.each do |lecture| %>
-    <tr>
-      <td><%= lecture.course_id %></td>
-      <td><%= lecture.course_name %></td>
-      <td><%= lecture.professor %></td>
-      <td><%= link_to 'Show', lecture_path(lecture) %></td>
-    </tr>
-  <% end %>
-</table>
+    <% @lectures.each do |lecture| %>
+      <tr>
+        <td><%= lecture.course_id %></td>
+        <td><%= lecture.course_name %></td>
+        <td><%= lecture.professor %></td>
+        <td><%= link_to 'Show', lecture_path(lecture) %></td>
+      </tr>
+      <% end %>
 
-<div class="text-center">
+    </table>
+
+  </div>
+
+<div class="paginate-style">
    <%= will_paginate @lectures, renderer: BootstrapPagination::Rails %>
 </div>
 </div>
