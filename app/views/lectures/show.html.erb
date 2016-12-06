@@ -15,9 +15,7 @@
   <div class="row">
     <% @attachments.each do |attachment| %>
       <div class="col-md-2 thumbnail">
-        <%= link_to attachment_path(attachment) do %>
-          <%= image_tag attachment.link.thumb %>
-        <% end %>
+        <%= attachment.link %>
       </div>
     <% end %>
   </div>

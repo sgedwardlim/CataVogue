@@ -16,16 +16,10 @@ Rails.application.routes.draw do
 
   resources :lectures do
     resources :comments
-<<<<<<< HEAD
-
-end
-
-  get 'about', to: 'pages#about', as: :aboutus
-
-=======
     resources :attachments
   end
->>>>>>> bb7369ff870b932c5cd48eb583d2360e170020ca
+
+  get 'about', to: 'pages#about', as: :aboutus
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

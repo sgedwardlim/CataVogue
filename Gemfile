@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem "rmagick", "~> 2.13.1"
+#gem "rmagick", "~> 2.13.1"
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
 # Devise is for user authethucation and helper methods
