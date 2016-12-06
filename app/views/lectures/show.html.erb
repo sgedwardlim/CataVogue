@@ -1,57 +1,55 @@
 <p>
   <strong><h2><%= @lecture.course_name %> (<%= @lecture.course_id %>)</h2></strong>
-  <strong><h2></h2></strong>
 </p>
  
 <p>
   <strong><h3><%= @lecture.professor %></h3></strong>
 </p><br>
+  
+  <div style="font-family: Georgia;">
+    <div class="jumbotron">
+      <div class="page-header">
+        <h2>Shared Resources</h2>
+      </div>
 
-<div class="jumbotron">
-  <div class="page-header">
-    <h2>Shared Resources<small>info</small></h2>
-  </div>
-
-  <div class="row">
-    <% if @attachments %>
-      <% @attachments.each do |attachment| %>
-        <div class="col-md-2 thumbnail">
-          <%= link_to attachment_path(attachment) do %>
-            <%= image_tag attachment.link %>
+      <div class="row">
+        <% if @attachments %>
+          <% @attachments.each do |attachment| %>
+            <div class="col-md-2 thumbnail">
+              <%= link_to attachment_path(attachment) do %>
+                <%= image_tag attachment.link %>
+              <% end %>
+            </div>
           <% end %>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
+        <% end %>
+      </div>
 
-  <div class="text-center">
-  <% if @attachments %>
-      <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
-    <% end %>
-  </div>
+      <div class="text-center">
+      <% if @attachments %>
+          <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
+        <% end %>
+      </div>
 
-    <%= form_for([@lecture, @lecture.attachments.build]) do |f| %>
-      <%= f.hidden_field :lecture_id, value: @lecture.id %>
-      <p>
-        <%= f.file_field :link %>
-      </p>
-      <p>
-        <%= f.submit %>
-      </p>
-    <% end %>
-</div>
+        <%= form_for([@lecture, @lecture.attachments.build]) do |f| %>
+          <%= f.hidden_field :lecture_id, value: @lecture.id %>
+          <p>
+            <%= f.file_field :link %>
+          </p>
+          <p>
+            <%= f.submit %>
+          </p>
+        <% end %>
+    </div>
+  </div>
 
 <!-- Show all the comments associated with the Lecture -->
 <div class="box">
-<h4 style="text-align: center; font-size: 30px;">Most Recent Comments</h4>
+<h4 style="text-align: center; font-size: 30px; font-family: Georgia;">Most Recent Comments</h4>
 <% @lecture.comments.each do |comment| %>
-  <div class="well well-sm">
-    <p>
+  <div class="box">
+    <p style="padding-bottom: 20px;">
       <strong>Name of Reviewer</strong>
-      <%= comment.reviewer %>
-    </p>
-   
-    <p>
+      <%= comment.reviewer %></br>
       <strong>Comment</strong>
       <%= comment.review %>
     </p>
@@ -60,17 +58,21 @@
 
 
 <!-- Allow users signed in to add a comment -->
-<h2 style="text-align: left; font-size: 30px;">Add a Comment/Review</h2>
+<h2 style="text-align: left; font-size: 30px; font-family: Georgia; padding-left: 20px;">Add a Comment/Review</h2>
 <%= form_for([@lecture, @lecture.comments.build]) do |f| %>
   <p class="form-style">
     <%= f.label :reviewer %><br>
+  </p>
+    <p style="color: #000000;" class="form-style">
     <%= f.text_field :reviewer %>
   </p>
   <p class="form-style">
     <%= f.label :review %><br>
+  </p>
+    <p style="color: #000000;" class="form-style">
     <%= f.text_area :review %>
   </p>
-  <p style="color: #000000;" class="form-style">
+  <p style="color: #000000; padding-bottom: 20px;" class="form-style">
     <%= f.submit %>
   </p>
 <% end %>
