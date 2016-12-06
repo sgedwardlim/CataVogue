@@ -13,6 +13,7 @@
   </div>
 
   <div class="row">
+  <% if @attachments %>
     <% @attachments.each do |attachment| %>
       <div class="col-md-2 thumbnail">
         <%= link_to attachment_path(attachment) do %>
@@ -20,10 +21,13 @@
         <% end %>
       </div>
     <% end %>
+  <% end %>
   </div>
 
   <div class="text-center">
-     <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
+  <% if @attachments %>
+    <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
+  <% end %>
   </div>
 
     <%= form_for([@lecture, @lecture.attachments.build]) do |f| %>
