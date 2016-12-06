@@ -1,6 +1,7 @@
 <div style="margin-top: 50px;" class="container">
   <div class="box">
 
+<<<<<<< HEAD
     <table style="margin:0 auto; width:95%; font-family: Georgia; padding-left: 20px; font-size: 20px;">
       <h1 style="margin:0 auto; width:95%; font-family: Georgia; text-align: center; padding-top: 15px; padding-bottom: 15px; font-size: 40px;">ALL LECTURES</h1>
       <tr>
@@ -9,6 +10,26 @@
         <th><u>Professor Name</u></th>
         <th></th>
         </tr>
+=======
+<div class="container">
+
+  <%= form_tag(lectures_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search Lectures" %>
+      <%= submit_tag "Search", :name => nil %>
+  <% end %>
+
+  <% if @lectures.blank? %>
+    <h4>There are no lectures containing the term <%= params[:search] %>.</h4>
+  <% end %>
+
+  <table class="table">
+  <tr>
+    <th>Course Id</th>
+    <th>Course Name</th>
+    <th>Professor Name</th>
+    <th></th>
+  </tr>
+>>>>>>> bb7369ff870b932c5cd48eb583d2360e170020ca
 
     <% @lectures.each do |lecture| %>
       <tr>

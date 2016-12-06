@@ -7,12 +7,35 @@
   <strong><h3><%= @lecture.professor %></h3></strong>
 </p><br>
 
-<ul class="nav nav-tabs">
-  <li role="presentation" class="active"><a href="#">Green Sheet</a></li>
-  <li role="presentation"><a href="#">Notes</a></li>
-</ul>
+<div class="jumbotron">
+  <div class="page-header">
+    <h2>Shared Resources <small>info</small></h2>
+  </div>
 
-<div class="well">...</div>
+  <div class="row">
+    <% @attachments.each do |attachment| %>
+      <div class="col-md-2 thumbnail">
+        <%= link_to attachment_path(attachment) do %>
+          <%= image_tag attachment.link.thumb %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+     <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
+  </div>
+
+    <%= form_for([@lecture, @lecture.attachments.build]) do |f| %>
+      <%= f.hidden_field :lecture_id, value: @lecture.id %>
+      <p>
+        <%= f.file_field :link %>
+      </p>
+      <p>
+        <%= f.submit %>
+      </p>
+    <% end %>
+</div>
 
 <!-- Show all the comments associated with the Lecture -->
 <h4>Most Recent Comments</h4>
