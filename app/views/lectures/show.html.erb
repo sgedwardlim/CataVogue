@@ -1,28 +1,33 @@
-<br>
+<p>
+  <strong><h2><%= @lecture.course_name %> (<%= @lecture.course_id %>)</h2></strong>
+  <strong><h2></h2></strong>
+</p>
+ 
+<p>
+  <strong><h3><%= @lecture.professor %></h3></strong>
+</p><br>
 
 <div class="jumbotron">
   <div class="page-header">
-    <h1><%= @lecture.course_name %><small> (<%= @lecture.course_id %>)</small></h1>
-    <h2>Professor: <%= @lecture.professor %></h2>
-    <h3>Shared Resources <small>info</small></h3>
+    <h2>Shared Resources <small>info</small></h2>
   </div>
 
   <div class="row">
-  <% if @attachments %>
-    <% @attachments.each do |attachment| %>
-      <div class="col-md-2 thumbnail">
-        <%= link_to attachment_path(attachment) do %>
-          <%= image_tag attachment.link %>
-        <% end %>
-      </div>
+    <% if @attachments %>
+      <% @attachments.each do |attachment| %>
+        <div class="col-md-2 thumbnail">
+          <%= link_to attachment_path(attachment) do %>
+            <%= image_tag attachment.link %>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
   </div>
 
   <div class="text-center">
   <% if @attachments %>
-    <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
-  <% end %>
+      <%= will_paginate @attachments, renderer: BootstrapPagination::Rails %>
+    <% end %>
   </div>
 
     <%= form_for([@lecture, @lecture.attachments.build]) do |f| %>

@@ -14,7 +14,7 @@
     <div class="col-lg-6">
       <div class="input-group">
         <%= form_tag(lectures_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Recipes", class: "form-control" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search Course ID or Professor Name", class: "form-control" %>
         <span class="input-group-btn">
             <%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
           <% end %>
