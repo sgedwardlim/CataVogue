@@ -1,15 +1,10 @@
-<p>
-  <strong><h2><%= @lecture.course_name %> (<%= @lecture.course_id %>)</h2></strong>
-  <strong><h2></h2></strong>
-</p>
- 
-<p>
-  <strong><h3><%= @lecture.professor %></h3></strong>
-</p><br>
+<br>
 
 <div class="jumbotron">
   <div class="page-header">
-    <h2>Shared Resources <small>info</small></h2>
+    <h1><%= @lecture.course_name %><small> (<%= @lecture.course_id %>)</small></h1>
+    <h2>Professor: <%= @lecture.professor %></h2>
+    <h3>Shared Resources <small>info</small></h3>
   </div>
 
   <div class="row">
