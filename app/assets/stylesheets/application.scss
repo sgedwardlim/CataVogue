@@ -52,6 +52,7 @@ body {
    letter-spacing: 0px;  
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7); 
+   font-family: Georgia;
 }
 
 .home-style{
@@ -67,4 +68,8 @@ body {
 
 .paginate-style {
 	text-align: center
+}
+
+.form-style {
+	padding-left: 40px;
 }
