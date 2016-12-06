@@ -25,12 +25,12 @@
 		  	
 		    <!-- dropdown bar after user logs in
 		    -->
-		    <li class="dropdown">
-		      <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%= current_user.email %>
+		    <li style="font-family: Georgia" class="dropdown">
+		      <button class="btn btn-primary btn-lg dropdown-toggle" type="button" data-toggle="dropdown"><%= current_user.email %>
 		      <span class="caret"></span></button>
 		      <ul class="dropdown-menu">
-		        <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
-		        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+		        <li style="font-family: Georgia; font-size: 20px;"><%= link_to 'Edit profile', edit_user_registration_path %></li>
+		        <li style="font-family: Georgia; font-size: 20px;"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
 		      </ul>
 		    </li>
 		    
